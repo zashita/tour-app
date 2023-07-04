@@ -20,4 +20,34 @@ export class Cell{
         this.id = Math.random()
         this.available = false
     }
+
+    canMoveVertical(target: Cell): boolean{
+        if(target.x !== this.x){
+            return false
+        }else{
+            const max = Math.max(this.y, target.y)
+            const min = Math.min(this.y, target.y)
+            for (let y = min + 1; y < max - 1; y++){
+                if (this.board.cells[this.x][y].piece !== null){
+                    return false
+                    break;
+                }else{
+                    return true
+                }
+            }
+
+        }
+    }
+
+    movePiece(target: Cell){
+        if(this.piece && this.piece.canMove(target) && this.canMoveVertical(target)){
+            // this.piece.movePiece(target)
+            target.piece = this.piece
+            this.piece = null;
+
+
+
+
+        }
+    }
 }

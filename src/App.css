@@ -4,10 +4,11 @@
 }
 
 .board{
-    width: calc(64px * 8);
-    height: calc(64px * 8);
+    width: calc(66px * 8);
+    height: calc(66px * 8);
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid saddlebrown;
 }
 .app{
     width: 100vw;
@@ -23,6 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
 }
 
 .white{
@@ -32,4 +34,23 @@
 .black{
 
     background-color: darkmagenta;
+}
+.pieceLogo{
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+
+.selected{
+    background-color: dodgerblue;
+}
+
+.available{
+    width: 10px;
+    height: 10px;
+    background-color: greenyellow;
+    border-radius: 50px;
+}
+.piece-available{
+    background-color: greenyellow;
 }
